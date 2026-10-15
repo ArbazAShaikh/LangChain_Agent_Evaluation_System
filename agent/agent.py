@@ -6,6 +6,7 @@ from prompts import agent_system_prompt
 from objects import Answer
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain.messages import HumanMessage
+from uuid import uuid4
 
 load_dotenv()
 
@@ -17,26 +18,33 @@ agent = create_agent(
     checkpointer=InMemorySaver()
 )
 
-config = {"configurable": {"thread_id": "1"}}
 
-question = HumanMessage(content="I would like to request a refund")
-conversation = True
+def run_conversation():
+    
+    config = {"configurable": {"thread_id": str(uuid4())}}
+
+    question = HumanMessage(content="I would like to request a refund")
+    conversation = True
 
 
-# conversation
-while conversation:
+    # conversation
+    while conversation:
+        
+        # invoking our agent
+        response = agent.invoke({"messages": question},config=config)
+        # collecting the structured response
+        structured_response = response["structured_response"]
 
-    # invoking our agent
-    response = agent.invoke({"messages": question},config=config)
-    # collecting the structured response
-    structured_response = response["structured_response"]
+        print(structured_response.answer)
 
-    print(structured_response.answer)
+        conversation = structured_response.conversation
 
-    user_input = input("reply: \n")
-    question = HumanMessage(content=user_input)
+        if conversation:
+            user_input = input("reply: \n")
+            question = HumanMessage(content=user_input)
+    
+    print("the job is done!")
 
-    conversation = structured_response.conversation
 
-print("the job is done!")
+run_conversation()
 
