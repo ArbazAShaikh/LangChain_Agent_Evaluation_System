@@ -33,7 +33,7 @@ users_data = {
         },
         "water_bottle": {
             "price": 18,
-            "date": "2026-10-25"
+            "date": "2026-7-25"
         },
         "lunch_box": {
             "price": 14,

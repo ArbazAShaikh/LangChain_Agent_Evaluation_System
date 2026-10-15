@@ -3,6 +3,7 @@ from data import users_data
 from dotenv import load_dotenv
 import logging
 from objects import PurchaseItem
+from datetime import date
 
 load_dotenv()
 
@@ -42,6 +43,13 @@ def issue_refund_ticket(refund_amount:int) -> str:
     """this tool will send a ticket to the teams to return a refund"""
     logging.info(f"using issue_refund_ticket tool")
     return f"a refund ticket has been issued successfully witht the amount of {refund_amount}"
+
+@tool
+def get_today_date() -> str:
+    """This tool can show you what is today's date"""
+    logging.info(f"using get_today_date tool")
+    return date.today()
+
 
 #print(get_user_purchase_history.invoke("user123"))
 """

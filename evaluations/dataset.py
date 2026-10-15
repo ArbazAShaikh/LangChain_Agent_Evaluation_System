@@ -11,6 +11,7 @@ dataset = EvaluationDataset(
                 ToolCall(name="get_user_purchase_history"),
                 ToolCall(name="calculate_right_refund"),
                 ToolCall(name="issue_refund_ticket"),
+                ToolCall(name="get_today_date"),
             ],
         ),
 
@@ -19,6 +20,7 @@ dataset = EvaluationDataset(
             expected_output="No refund will be issued because the book was purchased more than 30 days ago.",
             expected_tools=[
                 ToolCall(name="get_user_purchase_history"),
+                ToolCall(name="get_today_date")
             ],
         ),
 
@@ -29,6 +31,7 @@ dataset = EvaluationDataset(
                 ToolCall(name="get_user_purchase_history"),
                 ToolCall(name="calculate_right_refund"),
                 ToolCall(name="issue_refund_ticket"),
+                ToolCall(name="get_today_date")
             ],
         ),
 
@@ -39,15 +42,17 @@ dataset = EvaluationDataset(
                 ToolCall(name="get_user_purchase_history"),
                 ToolCall(name="calculate_right_refund"),
                 ToolCall(name="issue_refund_ticket"),
+                ToolCall(name="get_today_date")
             ],
         ),
 
         Golden(
-            input="I am user129. How much would I get for returning my usb_drive? Do not issue a ticket.",
+            input="I am user129. How much would I get for returning my usb_drive? Do not issue a refund ticket.",
             expected_output="You would receive $16 for the USB drive. No refund ticket has been issued.",
             expected_tools=[
                 ToolCall(name="get_user_purchase_history"),
                 ToolCall(name="calculate_right_refund"),
+                ToolCall(name="get_today_date")
             ],
         ),
 
