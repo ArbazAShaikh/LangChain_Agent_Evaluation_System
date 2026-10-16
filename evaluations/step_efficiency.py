@@ -10,16 +10,17 @@ sys.path.insert(
 from agent import agent
 from dataset import dataset
 from model import eval_model
+
 from deepeval.metrics import StepEfficiencyMetric
 from deepeval.integrations.langchain import CallbackHandler
 
 
-metrics = [StepEfficiencyMetric(threshold=0.8,model=eval_model,include_reason=True,)]
+metrics = [StepEfficiencyMetric(threshold=0.8,model=eval_model,include_reason=True)]
 
-# The `TaskCompletionMetric` is passed into the `evals_iterator`.
+
 for golden in dataset.evals_iterator(metrics=metrics):
     response = agent.invoke(
         {"messages": [{"role": "user", "content": golden.input}]},
-        config={"configurable": {"thread_id": str(uuid4())},"callbacks": [CallbackHandler()]},
+        config={"configurable": {"thread_id": str(uuid4())},
+        "callbacks": [CallbackHandler()]}
     )
-
