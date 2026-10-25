@@ -17,7 +17,7 @@ I built this repository as a hands-on learning lab for answering those questions
 
 ## Contents
 
-- [What you will learn](#what-you-will-learn)
+
 - [How the agent works](#how-the-agent-works)
 - [Quick start](#quick-start)
 - [Run evaluations](#run-evaluations)
@@ -29,7 +29,7 @@ I built this repository as a hands-on learning lab for answering those questions
 - [Project map](#project-map)
 - [Limitations and troubleshooting](#limitations-and-troubleshooting)
 
-## What you will learn
+
 
 - Build a tool-using agent with a system prompt, conversation memory, and a structured response.
 - Define evaluation cases with inputs, expected answers, and expected tools.
