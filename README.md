@@ -1,6 +1,6 @@
 # LangChain AI Agent Evaluation System
 
-> Build a refund support agent, trace its tool calls, and evaluate both its answers and its behavior with seven DeepEval metrics.
+> I built a refund support agent, traced its tool calls, and evaluated both its answers and its behavior with seven DeepEval metrics.
 
 ![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![LangChain](https://img.shields.io/badge/Agent-LangChain-1C3C3C)
@@ -11,7 +11,7 @@
 
 A correct final answer is only one part of a successful agent run. Did the agent identify the customer, check refund eligibility, select the right tools, and refund only the requested items?
 
-This repository is a hands-on learning lab for answering those questions. It pairs a LangChain refund agent with **eight evaluation scenarios**, **seven metrics**, and small examples that isolate individual evaluation concepts. Start with the examples, follow the complete evaluation flow, then adapt it to your own agent.
+I built this repository as a hands-on learning lab for answering those questions. It pairs a LangChain refund agent I built with **eight evaluation scenarios**, **seven metrics**, and small examples that isolate individual evaluation concepts. Start with the examples, follow the complete evaluation flow, then adapt it to your own agent.
 
 ![DeepEval report showing task completion, step efficiency, plan quality, and plan adherence](screenshots/Screenshot%202026-10-15%20180917.png)
 
@@ -88,7 +88,7 @@ You need **Python 3.12+**, **uv**, and an **OpenAI API key** with access to the 
 ### 1. Get the project
 
 ```bash
-git clone https://github.com/Mohamad-Hachem/LangChain_Agent_Evaluation_System.git
+git clone https://github.com/ArbazAShaikh/LangChain_Agent_Evaluation_System.git
 cd LangChain_Agent_Evaluation_System
 uv sync --locked
 ```
